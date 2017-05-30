@@ -61,7 +61,7 @@ public class BatteryFragment extends Fragment {
         int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
 
         float batteryPct = (level / (float)scale);
-        
+
         textView.setText(String.valueOf(batteryPct));
 
     }
