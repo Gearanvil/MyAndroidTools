@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -27,7 +28,6 @@ import com.sdaacademy.grzebieluch.pawel.myandroidtools.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 import static android.content.ContentValues.TAG;
 
@@ -42,6 +42,10 @@ public class LocalizationFragment extends Fragment implements OnMapReadyCallback
 
     @BindView(R.id.mapView)
     MapView mapView;
+    @BindView(R.id.latitude)
+    TextView latitude;
+    @BindView(R.id.longitude)
+    TextView longitude;
 
     public LocalizationFragment() {
         // Required empty public constructor
@@ -74,7 +78,11 @@ public class LocalizationFragment extends Fragment implements OnMapReadyCallback
             public void onMyLocationChange(Location arg0) {
                 // TODO Auto-generated method stub
                 mGoogleMap.clear();
+                latitude.setText("Latitude "+String.valueOf(arg0.getLatitude()));
+                longitude.setText("Longitude " +String.valueOf(arg0.getLongitude()));
                 mGoogleMap.addMarker(new MarkerOptions().position(new LatLng(arg0.getLatitude(), arg0.getLongitude())).title("It's Me!"));
+              //  mGoogleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(arg0.getLatitude(), arg0.getLongitude()), 15.0f));
+
                 CameraPosition yourPosition = CameraPosition.builder().target(new LatLng(arg0.getLatitude(), arg0.getLongitude())).zoom(16).bearing(10).tilt(45).build();
                 mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(yourPosition));
             }
