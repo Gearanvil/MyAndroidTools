@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.github.abara.library.batterystats.BatteryStats;
 import com.sdaacademy.grzebieluch.pawel.myandroidtools.fragments.BatteryFragment;
 import com.sdaacademy.grzebieluch.pawel.myandroidtools.fragments.FlashlightFragment;
+import com.sdaacademy.grzebieluch.pawel.myandroidtools.fragments.LocalizationFragment;
 import com.sdaacademy.grzebieluch.pawel.myandroidtools.fragments.StopwatchFragment;
 
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int TAB_BATTERY_POSITION = 0;
     private static final int TAB_FLASHLIGHT_POSITION = 1;
     private static final int TAB_STOPWATCH_POSITION = 2;
+    private static final int TAB_LOCALIZATION_POSITION = 3;
     @BindView(R.id.view_pager)
     ViewPager viewPager;
     @BindView(R.id.tab_layout)
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private BatteryFragment batteryFragment;
     private FlashlightFragment flashlightFragment;
     private StopwatchFragment stopwatchFragment;
+    private LocalizationFragment localizationFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,9 +77,12 @@ public class MainActivity extends AppCompatActivity {
         batteryFragment = new BatteryFragment();
         flashlightFragment = new FlashlightFragment();
         stopwatchFragment = new StopwatchFragment();
+        localizationFragment = new LocalizationFragment();
+
         fragments.add(batteryFragment);
         fragments.add(flashlightFragment);
         fragments.add(stopwatchFragment);
+        fragments.add(localizationFragment);
         MyPageAdapter adapter = new MyPageAdapter(getSupportFragmentManager(), fragments);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
@@ -86,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
                 .setIcon(getDrawable(R.drawable.ic_flash_on_black_24dp));
         tabLayout.getTabAt(TAB_STOPWATCH_POSITION)
                 .setIcon(getDrawable(R.drawable.ic_watch_black_24dp));
+        tabLayout.getTabAt(TAB_LOCALIZATION_POSITION)
+                .setIcon(getDrawable(R.drawable.ic_gps_fixed_black_24dp));
     }
 
 

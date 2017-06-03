@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "78476828638",
+    "firebase_url": "https://myandroidtools-eebec.firebaseio.com",
+    "project_id": "myandroidtools-eebec",
+    "storage_bucket": "myandroidtools-eebec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78476828638:android:d0b5cc4cab3426d8",
+        "android_client_info": {
+          "package_name": "com.sdaacademy.grzebieluch.pawel.myandroidtools"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78476828638-ubrklvpp8h3ud5fpaq9ivovv6hjfnhpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCn3Kdmj9ddA8CL2ecMkgVHBcP48x-0jDk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
